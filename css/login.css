@@ -1,0 +1,217 @@
+/* login.css - SOMENTE O VISUAL MODERNO, SEM ALTERAR FUNCIONALIDADES */
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* VARIÁVEIS PARA O NOVO VISUAL */
+:root {
+    --primary-blue: #0F4C75;
+    --primary-blue-light: #1FA2D6;
+    --primary-blue-dark: #083354;
+    --bg-gradient-start: #0F4C75;
+    --bg-gradient-end: #1FA2D6;
+    --white: #ffffff;
+    --error-bg: #ffe5e5;
+    --error-text: #b30000;
+    --shadow: 0 8px 25px rgba(0,0,0,0.25);
+    --transition: all 0.3s ease;
+}
+
+/* BODY - FUNDO PADRÃO (será sobrescrito pelo .login-page) */
+body {
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    background: #F4F6F8;
+}
+
+/* FUNDO GRADIENTE MODERNO */
+.login-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* CARD DE LOGIN MODERNO */
+.login-box {
+    background: var(--white);
+    width: 420px;
+    max-width: 100%;
+    border-radius: 20px;
+    padding: 45px 40px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    border-top: 5px solid var(--primary-blue-light);
+}
+
+/* LOGO DATA */
+.logoDesenvolvedor {
+    max-width: 160px;
+    height: auto;
+    margin-bottom: 25px;
+    transition: var(--transition);
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.logoDesenvolvedor:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* TÍTULO */
+.login-box h2 {
+    color: var(--primary-blue);
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+}
+
+/* MENSAGEM DE ERRO */
+.erro-mensagem {
+    background: var(--error-bg);
+    color: var(--error-text);
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    font-size: 13px;
+    font-weight: 500;
+    border-left: 4px solid var(--error-text);
+    text-align: left;
+    display: block;
+}
+
+/* INPUT GROUP */
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* CAMPOS DE INPUT MODERNOS */
+.inputLogin {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1.5px solid #e0e0e0;
+    font-size: 15px;
+    outline: none;
+    transition: var(--transition);
+    background: #fafafa;
+    font-family: inherit;
+    text-transform: uppercase;
+}
+
+.inputLogin::placeholder {
+    text-transform: none;
+    color: #999;
+}
+
+.inputLogin:focus {
+    border-color: var(--primary-blue-light);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(31, 162, 214, 0.1);
+    transform: translateY(-1px);
+}
+
+/* GRUPO ESPECÍFICO PARA SENHA */
+.password-group {
+    position: relative;
+}
+
+/* ÍCONE TOGGLE SENHA */
+.password-toggle {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 22px;
+    color: #888;
+    transition: var(--transition);
+    user-select: none;
+    background: transparent;
+    border-radius: 50%;
+}
+
+.password-toggle:hover {
+    color: var(--primary-blue);
+}
+
+/* BOTÃO DE LOGIN MODERNO */
+.formBtn {
+    width: 100%;
+    padding: 14px;
+    background: var(--primary-blue);
+    border: none;
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: var(--transition);
+    letter-spacing: 0.5px;
+    font-family: inherit;
+    margin-top: 10px;
+}
+
+.formBtn:hover {
+    background: var(--primary-blue-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(15, 76, 117, 0.3);
+}
+
+.formBtn:active {
+    transform: translateY(0);
+}
+
+/* RESPONSIVIDADE MODERNA */
+@media (max-width: 480px) {
+    .login-box {
+        width: 92%;
+        padding: 32px 24px;
+    }
+    
+    .logoDesenvolvedor {
+        max-width: 130px;
+    }
+    
+    .login-box h2 {
+        font-size: 20px;
+        margin-bottom: 22px;
+    }
+    
+    .inputLogin {
+        padding: 12px 14px;
+        font-size: 16px; /* Previne zoom no iOS */
+    }
+    
+    .password-toggle {
+        right: 12px;
+        font-size: 20px;
+    }
+    
+    .formBtn {
+        padding: 12px;
+    }
+}
+
+/* Tablet */
+@media (min-width: 481px) and (max-width: 768px) {
+    .login-box {
+        width: 400px;
+    }
+}
+
+/* Previne zoom em inputs no iOS */
+@media screen and (max-width: 768px) {
+    .inputLogin {
+        font-size: 16px !important;
+    }
+}

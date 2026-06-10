@@ -1,0 +1,85 @@
+/* RESET PADRÃO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* VARIÁVEIS GLOBAIS */
+:root {
+    --cor-primaria: #0F4C75;
+    --cor-secundaria: #1FA2D6;
+    --cor-fundo: #F4F6F8;
+    --cor-texto: #222;
+    --cor-branco: #ffffff;
+    --sombra-padrao: 0 6px 18px rgba(0, 0, 0, 0.12);
+    --transicao-padrao: all 0.3s ease;
+}
+
+/* BASE */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+    min-height: 100vh;
+    opacity: 0;
+    animation: fadeInPage 0.45s ease forwards;
+}
+
+/* TRANSIÇÃO SUAVE AO CARREGAR A TELA */
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* LINKS */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* BOTÕES */
+button {
+    font-family: inherit;
+    cursor: pointer;
+    transition: var(--transicao-padrao);
+}
+
+/* INPUTS */
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+/* CLASSE UTILITÁRIA PARA CARDS */
+.card-padrao {
+    background: var(--cor-branco);
+    border-radius: 14px;
+    box-shadow: var(--sombra-padrao);
+    padding: 20px;
+    transition: var(--transicao-padrao);
+}
+
+.card-padrao:hover {
+    transform: translateY(-2px);
+}
+
+/* CONTAINER PADRÃO */
+.container-padrao {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
