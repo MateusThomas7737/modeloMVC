@@ -1,23 +1,19 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
+<?php
 
-    <link rel="stylesheet" href="css/global.css">
-</head>
-<body>
+$titulo = 'Home';
 
-<h1>Bem-vindo ao Sistema</h1>
+require_once __DIR__ . '/../includes/sidebar.php';
 
-<p>
-    Usuário:
-    <?= htmlspecialchars($_SESSION['usuario_nome']) ?>
-</p>
+?>
 
-<a href="index.php?rota=logout">
-    Sair
-</a>
+<section class="pagina-home">
 
-</body>
-</html>
+    <h1>Dashboard</h1>
+
+    <p>
+        Bem-vindo ao sistema.
+    </p>
+
+</section>
+
+<?php require_once __DIR__ . '/../includes/footer.php'; ?>

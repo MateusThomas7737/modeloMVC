@@ -1,0 +1,260 @@
+/* ==========================================
+   RESET
+========================================== */
+
+.viewsLinks {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.viewsLinks li {
+    margin: 0;
+    padding: 0;
+}
+
+.viewsLinks a {
+    text-decoration: none;
+}
+
+/* ==========================================
+   LAYOUT PRINCIPAL
+========================================== */
+
+.layout-sistema {
+    min-height: 100vh;
+}
+
+.content {
+    margin-left: 50px;
+    min-height: 100vh;
+    padding: 25px;
+    transition: all 0.5s ease;
+}
+
+/* ==========================================
+   SIDEBAR
+========================================== */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 50px;
+    height: 100vh;
+
+    background: #222;
+
+    overflow: hidden;
+
+    transition: all 0.5s ease;
+
+    z-index: 1000;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar:hover {
+    width: 200px;
+}
+
+
+
+/* ==========================================
+   LOGO
+========================================== */
+
+.sidebarLogo {
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.sidebarLogo img {
+    width: 32px;
+    height: 32px;
+
+    object-fit: contain;
+
+    transition: all 0.5s ease;
+}
+
+.sidebar:hover .sidebarLogo img {
+    width: 120px;
+    height: auto;
+}
+
+/* ==========================================
+   MENU CENTRAL
+========================================== */
+
+.sbTopo {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    padding-top: 120px;
+
+    width: 100%;
+}
+
+.sbTopo > li {
+    width: 100%;
+
+    color: #fff;
+
+    position: relative;
+
+    padding: 12px 15px;
+
+    transition: all 0.3s ease;
+}
+
+.sbTopo > li:hover,
+.sbTopo > li.ativo {
+    background: #111;
+    cursor: pointer;
+}
+
+/* ==========================================
+   ÍCONES
+========================================== */
+
+.sbTopo > li i {
+    font-size: 16px;
+
+    width: 20px;
+
+    text-align: center;
+}
+
+/* ==========================================
+   TEXTO DO MENU
+========================================== */
+
+.sbTopo > li span {
+    position: absolute;
+
+    left: 60px;
+    top: 14px;
+
+    white-space: nowrap;
+
+    opacity: 0;
+
+    transition: all 0.2s ease;
+}
+
+.sidebar:hover .sbTopo > li span {
+    left: 50px;
+    opacity: 1;
+}
+
+/* ==========================================
+   DROPDOWN
+========================================== */
+
+.sbConteudo {
+    position: relative;
+
+    left: 25px;
+
+    width: 170px;
+
+    height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transition: all 0.5s ease;
+}
+
+.sbTopo > li.opened .sbConteudo {
+    opacity: 1;
+    left: 0;
+}
+
+.sbConteudo li a {
+    display: block;
+
+    color: #fff;
+
+    font-size: 12px;
+
+    padding: 8px 0;
+}
+
+.sbConteudo li a::before {
+    content: "\f10c";
+
+    font-family: FontAwesome;
+
+    margin-right: 8px;
+}
+
+/* ==========================================
+   LOGOUT
+========================================== */
+
+.logout {
+    width: 100%;
+
+    border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.logout a {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px;
+
+    color: #fff;
+
+    transition: all 0.3s ease;
+}
+
+.logout a:hover {
+    background: #111;
+}
+
+.logout i {
+    width: 20px;
+    text-align: center;
+}
+
+.logout span {
+    opacity: 0;
+
+    white-space: nowrap;
+
+    transition: all 0.2s ease;
+}
+
+.sidebar:hover .logout span {
+    opacity: 1;
+}
+
+/* ==========================================
+   RESPONSIVO
+========================================== */
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        width: 60px;
+    }
+
+    .content {
+        margin-left: 60px;
+    }
+
+}
